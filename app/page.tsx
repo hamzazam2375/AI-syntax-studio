@@ -1,4 +1,3 @@
-import { company } from "@/lib/site";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -18,7 +17,6 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <p className="brand-ribbon">{company.tagline}</p>
         <TechStack />
         <Services />
         <Projects />

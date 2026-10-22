@@ -13,6 +13,8 @@ const scenes: Record<string, { label: string; title: string; nodes: string[] }> 
   xr: { label: "XR LAB", title: "Safe chemistry in VR.", nodes: ["QUEST", "PHYSICS", "LAB"] },
   world: { label: "3D ADVENTURE", title: "A garden civilization restored.", nodes: ["EXPLORE", "SURVIVE", "RESTORE"] },
   studio: { label: "IMAGE → 3D", title: "Sketches become GLTF models.", nodes: ["IMAGE", "SD", "THREE"] },
+  hardhat: { label: "AI + IOT / FYP", title: "Helmet telemetry into AI risk.", nodes: ["SENSORS", "LORA", "AI RISK"] },
+  guide: { label: "EDGE AI / FYP", title: "Path-only collision, not full FOV.", nodes: ["YOLO", "DEPTH", "ENVELOPE"] },
 };
 
 export function ProjectVisual({ project }: { project: Project }) {

@@ -81,6 +81,7 @@ export const techStack = [
   { group: "Backend", items: ["Python", "FastAPI", "Django", "Node.js", "PostgreSQL", "FAISS", "ChromaDB"] },
   { group: "Cloud & MLOps", items: ["AWS Lambda", "API Gateway", "S3", "DynamoDB", "Docker", "MLflow", "CI/CD"] },
   { group: "Product", items: ["Next.js", "React", "React Native", "Streamlit", "Unity"] },
+  { group: "Edge & IoT", items: ["LoRa", "Sensor telemetry", "GPS", "Edge alerts"] },
 ] as const;
 
 export const processSteps = [

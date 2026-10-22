@@ -18,9 +18,6 @@ export function Services() {
           <article className="service-card" key={service.id}>
             <div className="card-top">
               <span>{service.number}</span>
-              <span className="card-arrow" aria-hidden="true">
-                ↗
-              </span>
             </div>
             <h3>{service.title}</h3>
             <p>{service.description}</p>

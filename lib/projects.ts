@@ -1,9 +1,11 @@
-export type ProjectCategory = "AI & ML" | "Automation" | "Backend" | "Immersive";
+export type ProjectCategory = "AI & IoT" | "AI & ML" | "Automation" | "Backend" | "Immersive";
+export type ProjectStatus = "live" | "in-progress" | "reserved";
 
 export type Project = {
   slug: string;
   title: string;
   category: ProjectCategory;
+  status?: ProjectStatus;
   featured?: boolean;
   description: string;
   tags: string[];
@@ -12,8 +14,10 @@ export type Project = {
   visual: string;
 };
 
-export const projectFilters: Array<"All" | ProjectCategory> = [
+export const projectFilters: Array<"All" | "In progress" | ProjectCategory> = [
   "All",
+  "In progress",
+  "AI & IoT",
   "AI & ML",
   "Automation",
   "Backend",
@@ -21,6 +25,42 @@ export const projectFilters: Array<"All" | ProjectCategory> = [
 ];
 
 export const projects: Project[] = [
+  {
+    slug: "smart-hardhat",
+    title: "Smart Hardhat",
+    category: "AI & IoT",
+    status: "in-progress",
+    description:
+      "Final-year prototype that connects a removable industrial hardhat module to an AI risk model. Edge sensors capture carbon monoxide, heat-index conditions, impact or possible falls, outdoor GPS, battery health, and a guarded SOS press. Local light, vibration, and sound warnings still fire on the helmet if the radio is down. Compact LoRa packets then carry status and urgent events to a gateway and supervisor dashboard, where the AI module estimates worker risk from the incoming telemetry, names contributing factors, and recommends actions to reduce that risk. The helmet shell is not modified. This is an FYP prototype — not certified PPE, a medical device, or a replacement for site safety procedures.",
+    tags: [
+      "AI risk assessment",
+      "IoT telemetry",
+      "LoRa",
+      "Sensor events",
+      "Supervisor dashboard",
+      "Edge alerts",
+    ],
+    visual: "hardhat",
+  },
+  {
+    slug: "guide-eye",
+    title: "Guide Eye",
+    category: "AI & ML",
+    status: "in-progress",
+    description:
+      "Wearable edge-AI assistant for spatial awareness and indoor navigation. Full-FOV detectors treat the entire camera view as a collision risk — at 3 m, a 77° lens already spans nearly 4.77 m — which floods the user with false alarms. Guide Eye runs a hybrid vision pipeline on-device: YOLOv8 finds indoor obstacles every frame, Depth Anything V2 (Metric Indoor Small) estimates distances in meters on staggered frames, and a Collision Envelope keeps warnings inside a 0.45–0.5 m walking corridor. Alerts fire only when an object intersects the user’s forward path. Models run at FP16 via ONNX/TFLite so metric depth is not lost to INT8, and all inference stays local on edge NPUs and mobile processors.",
+    tags: [
+      "YOLOv8",
+      "Depth Anything V2",
+      "Collision Envelope",
+      "Edge AI",
+      "OpenCV",
+      "ONNX / TFLite",
+      "FP16",
+      "Wearable CV",
+    ],
+    visual: "guide",
+  },
   {
     slug: "repairdesk-ai-copilot",
     title: "RepairDesk AI Copilot",
